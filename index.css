@@ -1,0 +1,62 @@
+#landing {
+	background: 
+		linear-gradient(
+			rgba(0, 34, 65, 0.61),
+			rgba(0, 34, 65, 0.61)
+			), 
+		url("./images/LandingBackground.jpg");
+		background-repeat: no-repeat;
+		background-size: cover;
+		;
+}
+
+#contact-img {
+    background: url("./images/MyLocation.PNG");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+#form-btn {
+  border: 4px solid #F2D2AE; 
+  border-radius: 10rem;
+}
+
+#Social-Icon {
+    margin: 50px;
+}
+
+#contact label {
+
+	font-family: Montserrat;
+	font-size: 20px;
+	font-weight: 600;
+	line-height: 24.38px;
+	text-align: left;
+	color: #0000FF;
+
+}
+
+#contact input {
+
+	border: 1px solid #B59066;
+
+	font-family: Montserrat;
+	font-size: 24px;
+	font-weight: 600;
+	line-height: 29.26px;
+	text-align: left;
+	color: #0000FF;
+
+}
+
+#contact textarea {
+	color: #0000FF;
+	border: 1px solid #B59066;
+	height: 210px;
+	font-family: Montserrat;
+	font-size: 24px;
+	font-weight: 600;
+	line-height: 29.26px;
+	text-align: left;
+
+}
