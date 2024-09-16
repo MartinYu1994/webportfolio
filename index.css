@@ -16,6 +16,10 @@
     background-size: contain;
 }
 
+#NavBar {
+    background-color: #765C3D;
+}
+
 #form-btn {
   border: 4px solid #F2D2AE; 
   border-radius: 10rem;
