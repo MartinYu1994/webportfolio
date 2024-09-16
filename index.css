@@ -19,6 +19,11 @@
 	color: #D8F9FF !important;
 }
 
+#HtmlLogo, #CSSLogo, #Bootstraplogo  {
+	width: 80px;
+	height: 80px;
+}
+
 #contact-img {
     background: url("./images/MyLocation.PNG");
     background-repeat: no-repeat;
