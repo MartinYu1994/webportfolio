@@ -1,267 +1,182 @@
-/* ------------------------ CSS Reset and font ------------------- */
+/* Reset & Fonts */
 * {
 	margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-	font-family: Montserrat;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: Montserrat, sans-serif;
 }
-/*  -------------------------- End of CSS Reset and font ------------------ */
 
 body {
-	background: 
-	linear-gradient(
-		rgba(0, 0, 0, 0.59),
-		rgba(0, 0, 0, 0.59)
-		), 
-	url("./images/LandingBackground.jpg");
-	background-repeat: no-repeat;
-	background-size: cover;
+	background: linear-gradient(rgba(0, 0, 0, 0.59), rgba(0, 0, 0, 0.59)),
+	url("./images/LandingBackground.jpg") no-repeat center center/cover;
+	color: #fff;
 }
 
-/*  ----------------------- navbar ----------- */
 #navbar {
 	background-color: #808080;
 }
-
 .nav-link {
-
-	color: #000000 !important;
+	color: #000 !important;
 	font-weight: bold;
 }
-
 #logo {
-
-	background: 
-		url("./images/Martin.jpg");	
-
+	background: url("./images/Martin.jpg") center/cover no-repeat;
 	width: 35px;
 	height: 35px;
-	background-size: cover;
-	border-radius: 30px;
+	border-radius: 50%;
 }
-/* ------------------ end of navbar ------------ */
 
-
-/* ------------------- landing ----------------- */
 #landing {
-	background: 
-	linear-gradient(
-		rgba(0, 0, 0, 0.59),
-		rgba(0, 0, 0, 0.59)
-		), 
-	url("./images/LandingBackground.jpg");
-	background-repeat: no-repeat;
-	background-size: cover;
+	background: linear-gradient(rgba(0,0,0,0.59), rgba(0,0,0,0.59)),
+	url("./images/LandingBackground.jpg") no-repeat center/cover;
 }
-
 #profile {
-
-	background: 
-		url("./images/Martin.png");	
-
+	background: url("./images/Martin.png") center/cover no-repeat;
 	width: 260px;
 	height: 240px;
-	background-size: cover;
 	border-radius: 400px;
+	animation: float 4s ease-in-out infinite;
 }
 
+@keyframes float {
+	0% { transform: translateY(0px); }
+	50% { transform: translateY(-12px); }
+	100% { transform: translateY(0px); }
+}
 #title {
- 	
-	font-family: Montserrat;
 	font-size: 50px;
 	font-weight: 600;
-	line-height: 72px;
-	letter-spacing: -0.02em;
-	color: #FFFFFF;
-
+	color: #fff;
 }
-
-#title-base  {
-
-	font-family: Montserrat;
+#title-base {
 	font-size: 24px;
 	font-weight: 600;
-	line-height: 29.26px;
-	color: #FFFFFF;
-
+	color: #fff;
 }
-
-#title-desc  {
-
-	font-family: Montserrat;
+#title-desc {
 	font-size: 15px;
 	font-weight: 400;
-	line-height: 29.26px;
-	color: #FFFFFF;
-
+	color: #fff;
 }
-/* --------------------- End of landing ---------------------- */
 
-
-/* ------------------- projects ---------------------- */
 #projects { 
-    background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent white */
-    padding: 20px;
-    border-radius: 8px; /* Optional: to round corners */
-  
+	background-color: rgba(255, 255, 255, 0.1);
+	padding: 20px;
+	border-radius: 8px;
 }
 #projects h3 {
 	color: #D8F9FF;
-	font-family: Montserrat;
 	font-size: 40px;
 	font-weight: 600;
-	line-height: 48.76px;
 	text-align: center;
+	margin-bottom: 30px;
 }
 
-.carousel-caption {
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
-    padding: 1px;
-    border-radius: 2px; /* Optional: to round corners */
+.tilt {
+	perspective: 1000px;
 }
 
-/* ----------------------- End of projects -------------------------- */
+.project-card {
+	border: none;
+	border-radius: 12px;
+	overflow: hidden;
+	background: #fff;
+	color: #000;
+	transform-style: preserve-3d;
+	transition: transform 0.5s ease, box-shadow 0.5s ease;
+	box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+	animation: floatCard 6s ease-in-out infinite;
+}
+.project-card img {
+	transition: transform 0.4s ease;
+}
+.project-card:hover {
+	transform: translateY(-12px) rotateX(6deg) rotateY(-6deg);
+	box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+}
+.project-card:hover img {
+	transform: scale(1.05);
+}
 
-
-/* --------------------------- tools -------------------------------- */
+@keyframes floatCard {
+	0%   { transform: translateY(0px) rotateX(0deg) rotateY(0deg); }
+	50%  { transform: translateY(-12px) rotateX(2deg) rotateY(-2deg); }
+	100% { transform: translateY(0px) rotateX(0deg) rotateY(0deg); }
+}
 
 #tools { 
-    background-color: rgba(255, 255, 255, 0.1);
-    padding: 10px;
-    border-radius: 8px;
-  
+	background-color: rgba(255, 255, 255, 0.1);
+	padding: 20px;
+	border-radius: 8px;
 }
-
 #tools h2 {
-    font-family: Montserrat;
-    font-size: 40px;
-    font-weight: 600;
-    line-height: 48.76px;
-    /*text-align: center;*/
-    /*width: 385px;
-    height: 50.59px;*/
-    color: #D8F9FF;
-
+	font-size: 40px;
+	font-weight: 600;
+	color: #D8F9FF;
 }
 
-#tool-logo1, #tool-logo2, #tool-logo3, #tool-logo4, #tool-logo5, #tool-logo6  {
+#tool-logo1, #tool-logo2, #tool-logo3, #tool-logo4, #tool-logo5 {
 	width: 80px;
 	height: 80px;
+	transition: transform 0.6s ease, box-shadow 0.6s ease;
+	transform-style: preserve-3d;
+	animation: floatLogo 5s ease-in-out infinite;
 }
-/* ---------------------------------------- End of tools ----------------- */
+#tool-logo1:hover, #tool-logo2:hover, #tool-logo3:hover,
+#tool-logo4:hover, #tool-logo5:hover {
+	transform: scale(1.2) rotateY(12deg) rotateX(12deg);
+	box-shadow: 0 15px 25px rgba(0,0,0,0.4);
+}
 
+@keyframes floatLogo {
+	0%   { transform: translateY(0px); }
+	50%  { transform: translateY(-10px); }
+	100% { transform: translateY(0px); }
+}
 
-/* ----------------------- contact ------------------ */
-
+/* Contact */
 #contact-img {
-	height: 900px
+	background: linear-gradient(rgba(0,0,0,0.59), rgba(0,0,0,0.59)),
+	url("./images/contact.png") no-repeat center/cover;
+	min-height: 500px;
 }
-#contact-container{
-    background: #D8F9FF;
+#contact-container {
+	background: #D8F9FF;
+	color: #0C5996;
+	border-radius: 12px;
 }
-#contact-id{
-    font-family: Montserrat;
-    font-size: 40px;
-    font-weight: 600;
-    line-height: 48.76px;
-    text-align: left;
-    color: #0C5996;
-
+#contact-id {
+	font-size: 40px;
+	font-weight: 600;
+	color: #0C5996;
 }
 #contact-desc {
-    font-family: Montserrat;
-    font-size: 24px;
-    font-weight: 400;
-    line-height: 29.26px;
-    text-align: left;
-    color: #008CBA;
+	font-size: 20px;
+	color: #008CBA;
 }
-#contact-img{
-    background: linear-gradient(
-        rgba(0, 0, 0, 0.59),
-        rgba(0, 0, 0, 0.59)),
-
-    url("./images/contact.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
 #clogo1, #clogo2, #clogo3 {
 	width: 50px;
 	height: 50px;
+	transition: transform 0.3s ease;
 }
-
-
-#form-btn, #form-btn2{
-    padding: 12px 32px 12px 32px;
-    gap: 8px;
-    border-radius: 999px;
-    background: #0C5996;
-    font-family: Montserrat;
-    font-size: 20px;
-    font-weight: 600;
-    line-height: 24px;
-    text-align: center;
-    color:#FFFFFF;
-
+#clogo1:hover, #clogo2:hover, #clogo3:hover {
+	transform: scale(1.3);
 }
-
-#contact h4 {
-
-	font-family: Montserrat;
-	font-size: 50px;
-	font-weight: 600;
-	line-height: 24.38px;
-	text-align: left;
-	color: #D8F9FF;
-
-}
-
-#contact label {
-
-	font-family: Montserrat;
+#form-btn {
+	padding: 12px 32px;
+	border-radius: 999px;
+	background: #0C5996;
 	font-size: 20px;
 	font-weight: 600;
-	line-height: 24.38px;
-	text-align: left;
-	color: #0C5996;
-
+	color:#fff;
+	border: none;
 }
 
-#contact input {
-
-	border: 1px solid #0C5996;
-
-	font-family: Montserrat;
-	font-size: 24px;
-	font-weight: 600;
-	line-height: 29.26px;
-	text-align: left;
-	color: #0C5996;
-
-}
-
-#contact textarea {
-	color: #765C3D;
-	border: 1px solid #0C5996;
-	height: 210px;
-	font-family: Montserrat;
-	font-size: 24px;
-	font-weight: 600;
-	line-height: 29.26px;
-	text-align: left;
-
-}
-/* --------------------------------- End of contact ---------------------------------- */
-
-
-/* ----------------------------------- footer --------------------------------------- */
-footer, footer p {
+/* Footer */
+footer {
 	background: #0C5996;
 	color: #D8F9FF;
-	font-family: Montserrat;
 	font-size: 16px;
 	font-weight: 500;
-
+	padding: 10px;
 }
-/* --------------------------------- End of footer ------------------------- */
