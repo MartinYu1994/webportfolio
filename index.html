@@ -315,42 +315,51 @@
                 observer.observe(skill);
             });
             
-            // Form submission handling
             const contactForm = document.getElementById('contact-form');
             if (contactForm) {
-                contactForm.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    const submitBtn = document.getElementById('form-btn');
-                    submitBtn.innerHTML = 'Sending...';
-                    submitBtn.disabled = true;
-                    
-                    // Simulate form submission
-                    setTimeout(() => {
-                        submitBtn.innerHTML = 'Sent!';
-                        submitBtn.style.background = '#4CAF50';
-                        contactForm.reset();
+                const submitBtn = document.getElementById('form-btn');
+                if (submitBtn) {
+                    contactForm.addEventListener('submit', function(e) {
+                        e.preventDefault();
+                        submitBtn.innerHTML = 'Sending...';
+                        submitBtn.disabled = true;
                         
+                        // Simulate form submission
                         setTimeout(() => {
-                            submitBtn.innerHTML = 'Submit';
-                            submitBtn.disabled = false;
-                            submitBtn.style.background = '#0C5996';
-                        }, 2000);
-                    }, 1500);
-                });
+                            submitBtn.innerHTML = 'Sent!';
+                            submitBtn.style.background = '#4CAF50';
+                            contactForm.reset();
+                            
+                            setTimeout(() => {
+                                submitBtn.innerHTML = 'Submit';
+                                submitBtn.disabled = false;
+                                submitBtn.style.background = '#0C5996';
+                            }, 2000);
+                        }, 1500);
+                    });
+                }
             }
 
-			    // Fixed CV download functionality
-            	const downloadCV = function(e) {
+            // Fixed CV download functionality
+            document.getElementById('downloadCV').addEventListener('click', function(e) {
                 e.preventDefault();
+                
+                // Create a temporary link element
                 const link = document.createElement('a');
-                link.href = 'assets/MartinRoncarloYu_CV.pdf'; // must match your file path
+                
+                // Set the href to your CV file path
+                // IMPORTANT: Make sure this path is correct for your file
+                link.href = 'assets/MartinRoncarloYu_CV.pdf';
+                
+                // Set the download attribute with the desired file name
                 link.download = 'MartinRoncarloYu_CV.pdf';
+                
+                // Append to body, click, and remove
                 document.body.appendChild(link);
                 link.click();
                 document.body.removeChild(link);
-            };
+            });
 
-            document.getElementById('downloadCV').addEventListener('click', downloadCV);
             // Theme toggle functionality
             const themeToggle = document.getElementById('themeToggle');
 
