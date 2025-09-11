@@ -57,9 +57,12 @@
                 <p id="title-base">FullStack Web Developer</p>
                 <p id="title-desc">This is my Developer Portfolio</p>
                 <div class="mt-4">
-                    <a href="#projects" class="btn btn-primary me-2">View My Work</a>
-                    <a href="#contact" class="btn btn-outline-light">Contact Me</a>
-                </div>
+					<a href="#projects" class="btn btn-primary me-2">View My Work</a>
+					<a href="#contact" class="btn btn-outline-light me-2">Contact Me</a>
+					<a href="assets/MartinRoncarloYu_CV.pdf" download="MartinRoncarloYu_CV.pdf" class="btn btn-outline-light">
+					<i class="fas fa-download me-1"></i> Download CV
+					</a>
+				</div>
             </div>
         </div>
     </section>
@@ -334,6 +337,23 @@
                     }, 1500);
                 });
             }
+
+			 // CV download functionality
+			const downloadCV = function(e) {
+				e.preventDefault();
+				
+				// Create a temporary link for download
+				const link = document.createElement('a');
+				link.href = 'path/to/your-cv.pdf'; // Replace with actual path to your CV
+				link.download = 'Martin_Roncarlo_Yu_CV.pdf';
+				document.body.appendChild(link);
+				link.click();
+				document.body.removeChild(link);
+			};
+			
+			// Add event listeners to both CV buttons
+			document.getElementById('downloadCV').addEventListener('click', downloadCV);
+			document.getElementById('navDownloadCV').addEventListener('click', downloadCV);
             
             // Theme toggle functionality
             const themeToggle = document.getElementById('themeToggle');
